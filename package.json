@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "mysql": "*",
+    "body-parser": "latest",
     "express": "latest",
-    "body-parser": "latest"
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.1",
+    "mysql": "*",
+    "typescript": "^2.7.2"
   }
 }
