@@ -1,0 +1,10 @@
+{
+  "name": "pinMe",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "mysql": "*",
+    "express": "latest",
+    "body-parser": "latest"
+  }
+}
