@@ -1,6 +1,6 @@
 import {TodoType} from "./TodoType";
 
-class Todo {
+export class Todo {
     
     name: string;
     description : string;
