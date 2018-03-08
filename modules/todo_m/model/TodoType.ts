@@ -1,4 +1,4 @@
 export enum TodoType {
     DEFAULT = 1,
-    SHOPPINGLIST = 2 ,
+    SHOPPINGLIST = 2,
 }
