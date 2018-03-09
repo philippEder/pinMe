@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import TodoRouter from './m_todo/rest/TodoRouter';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -34,6 +35,7 @@ class App {
       });
     });
     this.express.use('/', router);
+    this.express.use('/todos', TodoRouter);
   }
 
 }
