@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import TodoRouter from './m_todo/rest/TodoRouter';
+import TodoRouter from './m_todo/routes/TodoRouter';
 
 // Creates and configures an ExpressJS web server.
 class App {

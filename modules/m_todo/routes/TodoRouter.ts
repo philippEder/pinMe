@@ -1,4 +1,5 @@
 import {Router, Request, Response, NextFunction} from 'express';
+import {TodoDataAccess} from '../service/TodoDataAccess';
 
 export class TodoRouter {
   router: Router
@@ -12,6 +13,7 @@ export class TodoRouter {
    * GET all Heroes.
    */
   public getAll(req: Request, res: Response, next: NextFunction) {
+    TodoDataAccess.getAllTodos();
     res.send('todosCalled');
   }
 
@@ -20,7 +22,7 @@ export class TodoRouter {
    * endpoints.
    */
   init() {
-    this.router.get('/', this.getAll);
+    this.router.get('/all', this.getAll);
   }
 
 }
