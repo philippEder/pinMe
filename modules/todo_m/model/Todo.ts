@@ -2,7 +2,7 @@ import {TodoType} from "./TodoType";
 
 export class Todo {
     
-    name: string;
+    name: string;   
     description : string;
     startDate : Date;
     endDate : Date;

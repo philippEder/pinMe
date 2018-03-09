@@ -1,4 +1,6 @@
 
-/modules/todo_m/dist
+/dist
 
 /node_modules
+
+/.vscode
