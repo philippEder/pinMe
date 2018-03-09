@@ -12,7 +12,7 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('watch', ['scripts'], () => {
-  gulp.watch('modules/**.ts', ['scripts']);
+  gulp.watch('modules/**/*.ts', ['scripts']);
 });
 
 gulp.task('assets', function() {

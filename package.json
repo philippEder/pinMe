@@ -16,15 +16,23 @@
   "homepage": "https://github.com/philippEder/pinMe#readme",
   "devDependencies": {
     "@types/body-parser": "0.0.33",
+    "@types/chai": "^3.4.34",
+    "@types/chai-http": "0.0.29",
     "@types/debug": "0.0.29",
     "@types/express-serve-static-core": "4.0.49",
+    "@types/mocha": "^2.2.32",
     "@types/morgan": "^1.7.32",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.1",
+    "mocha": "^3.1.2",
+    "ts-node": "^3.3.0",
     "typescript": "^2.0.6"
   },
   "scripts": {
     "start": "node dist/index.js",
+    "test": "mocha --reporter spec --compilers ts:ts-node/register 'modules/test/helloWorld.test.ts'",
     "build": "gulp scripts"
   },
   "dependencies": {
