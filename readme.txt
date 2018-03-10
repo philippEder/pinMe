@@ -1,5 +1,6 @@
 starting the application as developer:
 - git pull
 - npm install
-- gulp
+- gulp watch
+- gulp scripts
 - npm start

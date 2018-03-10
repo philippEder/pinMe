@@ -14,14 +14,16 @@ export abstract class BaseDataAccess {
 
         BaseDataAccess.connection.query(query, function(err, rows, fields) {
             if (!err) {
+                BaseDataAccess.connection.end();
                 return rows;
             }
             else {
+                BaseDataAccess.connection.end();
                 throw('Error while performing Query: ' + query);
-            }
+            }  
         });
 
-        BaseDataAccess.connection.end();
+       
 
     }
 
