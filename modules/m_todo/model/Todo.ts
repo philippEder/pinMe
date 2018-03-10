@@ -2,6 +2,7 @@ import {TodoType} from "./TodoType";
 
 export class Todo {
     
+    id : number;
     name: string;   
     description : string;
     startDate : Date;
@@ -9,16 +10,21 @@ export class Todo {
     type : TodoType = TodoType.DEFAULT;
 
 
-    constructor(public name1: string, public description1: string, public startDate1: Date, public endDate1: Date) {    
-        this.name = name1;
-        this.description = description1;
-        this.startDate = startDate1;
-        this.endDate = endDate1;
+    constructor(id: number, name: string, description: string, startDate: Date, endDate: Date) {    
+        this.name = name;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
-    public static fromJson(json : String) : Todo {
-        console.log(json);
-        return null;
+    public static fromJson(json) : Todo {
+        let id : number = json[0]["TD_ID"];
+        let name : string = json[0]["TD_NAME"];
+        let description : string = json[0]["TD_DESCRIPTION"];
+        let startDate : Date = new Date(json[0]["TD_STARTDATE"]);
+        let endDate : Date = new Date(json[0]["TD_ENDDATE"]);
+
+        return new Todo(id,name,description,startDate,endDate);
     }
 
     public static manyFromJson(json : String) : Todo[] {

@@ -7,6 +7,7 @@ export class TodoDataAccess extends BaseDataAccess {
 public static getAllTodos() : Promise<any> {
     let query : string = 'SELECT * FROM TODO';
     return TodoDataAccess.executeQuery(query).then(function (res) {
+            console.log(Todo.fromJson(res));
             return res;
     });
 }
