@@ -2,29 +2,26 @@ import * as mysql from "mysql";
 
 export abstract class BaseDataAccess {
 
-    static connection = mysql.createConnection({
+    static connectionString = {
         host     : '10.0.0.13',
         user     : 'root',
         password : '12345678',
         database : 'pinMe'
-    });
+    };
 
-    public static executeQuery(query : string) : any {
-        BaseDataAccess.connection.connect();
+    public static  executeQuery(query : string) : Promise<any> {
+        return new Promise((resolve,reject) => {
 
-        BaseDataAccess.connection.query(query, function(err, rows, fields) {
-            if (!err) {
-                BaseDataAccess.connection.end();
-                return rows;
-            }
-            else {
-                BaseDataAccess.connection.end();
-                throw('Error while performing Query: ' + query);
-            }  
-        });
+            let connection = mysql.createConnection(this.connectionString);
 
-       
-
+            connection.query(query, function(err, rows, fields) {
+                if (!err) {
+                    resolve(rows);
+                }
+                else {
+                    reject(err);
+                }  
+            });
+        });   
     }
-
 }

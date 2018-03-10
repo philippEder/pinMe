@@ -18,8 +18,13 @@ export class TodoRouter {
   }
 
   public getAll(req: Request, res: Response, next: NextFunction) {
-    TodoDataAccess.getAllTodos();
-    res.send('todosCalled');
+    TodoDataAccess.getAllTodos()
+        .then(function (val) { 
+          res.send(val); 
+        })
+        .catch(function (err) {
+          res.send(err);
+    })
   }
 
   
