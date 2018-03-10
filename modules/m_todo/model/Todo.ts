@@ -16,4 +16,13 @@ export class Todo {
         this.endDate = endDate1;
     }
 
+    public static fromJson(json : String) : Todo {
+        console.log(json);
+        return null;
+    }
+
+    public static manyFromJson(json : String) : Todo {
+        return null;
+    }
+
 }

@@ -1,14 +1,14 @@
 {
   "name": "pinMeBackend",
   "version": "1.0.0",
-  "description": "",
+  "description": "-",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/philippEder/pinMe.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Philipp Eder, Denis Miskovic",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/philippEder/pinMe/issues"

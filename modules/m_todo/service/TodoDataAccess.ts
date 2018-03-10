@@ -1,27 +1,12 @@
 import {Todo} from "../model/Todo";
-import * as mysql from "mysql";
+import {BaseDataAccess} from "../../common/BaseDataAccess";
 
-export class TodoDataAccess {
-
-
-static connection = mysql.createConnection({
-  host     : '10.0.0.13',
-  user     : 'root',
-  password : '12345678',
-  database : 'pinMe'
-});
+export class TodoDataAccess extends BaseDataAccess {
 
 public static getAllTodos() {
-    TodoDataAccess.connection.connect();
+    let query : string = 'SELECT * FROM TODO';
+    TodoDataAccess.executeQuery(query);
 
-    TodoDataAccess.connection.query('SELECT * from TODO', function(err, rows, fields) {
-    if (!err)
-        console.log('The solution is: ', rows);
-    else
-        console.log('Error while performing Query.');
-    });
-
-    TodoDataAccess.connection.end();
 }
 
 

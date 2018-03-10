@@ -1,4 +1,4 @@
 git pull
 npm install
-gulp scripts
+npm run build
 npm start

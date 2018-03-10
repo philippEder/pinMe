@@ -9,14 +9,20 @@ export class TodoRouter {
     this.init();
   }
 
+  init() {
+    this.router.get('/all', this.getAll);
+  }
+
+  public getById(req: Request, res : Response, nex: NextFunction) {
+    
+  }
+
   public getAll(req: Request, res: Response, next: NextFunction) {
     TodoDataAccess.getAllTodos();
     res.send('todosCalled');
   }
 
-  init() {
-    this.router.get('/all', this.getAll);
-  }
+  
 
 }
 
