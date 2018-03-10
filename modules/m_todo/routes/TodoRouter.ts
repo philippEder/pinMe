@@ -1,5 +1,6 @@
 import {Router, Request, Response, NextFunction} from 'express';
 import {TodoDataAccess} from '../service/TodoDataAccess';
+import { TodoService } from '../service/TodoService';
 
 export class TodoRouter {
   router: Router
@@ -11,6 +12,7 @@ export class TodoRouter {
 
   init() {
     this.router.get('/all', this.getAll);
+    this.router.post("/insertTest", this.inserTestTodo);
   }
 
   public getById(req: Request, res : Response, nex: NextFunction) {
@@ -24,7 +26,17 @@ export class TodoRouter {
         })
         .catch(function (err) {
           res.send(err);
-    })
+        })
+  }
+
+  public inserTestTodo(erq: Request, res:Response, next : NextFunction) {
+    TodoService.insertTestTodo()
+        .then(function (val) { 
+          res.send(val); 
+        })
+        .catch(function (err) {
+          res.send(err);
+        })
   }
 
   

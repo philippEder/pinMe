@@ -21,7 +21,7 @@ export class Todo {
         return null;
     }
 
-    public static manyFromJson(json : String) : Todo {
+    public static manyFromJson(json : String) : Todo[] {
         return null;
     }
 

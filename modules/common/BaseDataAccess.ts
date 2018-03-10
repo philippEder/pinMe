@@ -2,7 +2,7 @@ import * as mysql from "mysql";
 
 export abstract class BaseDataAccess {
 
-    static connectionString = {
+    static connectionJson = {
         host     : '10.0.0.13',
         user     : 'root',
         password : '12345678',
@@ -12,13 +12,12 @@ export abstract class BaseDataAccess {
     public static  executeQuery(query : string) : Promise<any> {
         return new Promise((resolve,reject) => {
 
-            let connection = mysql.createConnection(this.connectionString);
+            let connection = mysql.createConnection(this.connectionJson);
 
             connection.query(query, function(err, rows, fields) {
                 if (!err) {
                     resolve(rows);
-                }
-                else {
+                } else {
                     reject(err);
                 }  
             });
