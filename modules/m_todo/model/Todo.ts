@@ -10,7 +10,8 @@ export class Todo {
     type : TodoType = TodoType.DEFAULT;
 
 
-    constructor(id: number, name: string, description: string, startDate: Date, endDate: Date) {    
+    constructor(id: number, name: string, description: string, startDate: Date, endDate: Date) {  
+        this.id = id;  
         this.name = name;
         this.description = description;
         this.startDate = startDate;
