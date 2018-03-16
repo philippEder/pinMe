@@ -25,5 +25,12 @@ export class TodoDataAccess extends BaseDataAccess {
         });
     }
 
+    public static getTodosOrderedByDueDateDescPaged(offset : number, limit : number) : Promise <any> {
+        let query : string = 'SELECT * FROM TODO ORDER BY TD_STARTDATE DESC LIMIT ' + limit;
+        return TodoDataAccess.executeQuery(query).then(function (res) {
+            return res;
+        });
+    }
+
 }
 

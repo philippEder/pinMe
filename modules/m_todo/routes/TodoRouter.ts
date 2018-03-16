@@ -12,6 +12,7 @@ export class TodoRouter {
 
   init() {
     this.router.get('/all', this.getAll);
+    this.router.get('/pending',this.getPending);
     this.router.post("/insertTest", this.inserTestTodo);
   }
 
@@ -37,6 +38,12 @@ export class TodoRouter {
         .catch(function (err) {
           res.send(err);
         })
+  }
+
+  public getPending(req : Request, res : Response, next : NextFunction) {
+    TodoDataAccess.getTodosOrderedByDueDateDescPaged(0,5)
+                  .then((val) => res.send(val))
+                  .catch((err) => res.send(err));
   }
 
   
