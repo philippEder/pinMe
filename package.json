@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "test": "mocha --reporter spec --compilers ts:ts-node/register 'modules/test/helloWorld.test.ts'",
+    "test": "mocha --reporter spec --compilers ts:ts-node/register \"modules/test/*.test.ts\"",
     "build": "gulp scripts"
   },
   "dependencies": {
