@@ -1,4 +1,4 @@
 git pull
 npm install
 npm run build
-npm start
+nohup npm start &
